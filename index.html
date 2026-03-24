@@ -640,4 +640,9 @@ function setLang(l){
   lang=l;
   document.documentElement.setAttribute('data-lang',l);
   document.querySelectorAll('.lbtn').forEach(b=>b.classList.toggle('on',b.textContent.toLowerCase()===l));
-  d
+  document.querySelectorAll('[data-de]').forEach(el=>{const v=el.dataset[l];if(v!==undefined)el.innerHTML=v;});
+}
+setLang(lang);
+</script>
+</body>
+</html>
