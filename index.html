@@ -194,7 +194,7 @@ h2.st.dark em{color:var(--accent)}
 .card-head{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-bottom:14px;border-bottom:1px solid var(--bdl);margin-bottom:16px}
 .fact-r{display:flex;align-items:flex-start;gap:13px;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:14px}
 .fact-r:last-child{border-bottom:none}
-.ficon{font-size:14px;margin-top:2px;flex-shrink:0}
+.ficon{font-size:9px;margin-top:5px;flex-shrink:0;color:var(--accent)}
 .fk{color:var(--muted);min-width:82px;font-weight:300}
 .fv{color:var(--ink);font-weight:400}
 
@@ -202,7 +202,7 @@ h2.st.dark em{color:var(--accent)}
 .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:56px}
 .cert-card{border:1px solid var(--bd);border-radius:3px;padding:22px 24px;transition:all .25s var(--ease)}
 .cert-card:hover{border-color:var(--accent);background:var(--accent-d);transform:translateY(-3px)}
-.cert-badge-icon{font-size:26px;margin-bottom:12px}
+.cert-badge-icon{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--accent);border:1px solid var(--accent);border-radius:2px;padding:3px 8px;margin-bottom:14px}
 .cert-name{font-family:var(--fh);font-size:16px;font-weight:600;color:var(--white);margin-bottom:4px;line-height:1.25}
 .cert-issuer{font-size:12px;color:var(--muted);margin-bottom:6px}
 .cert-meta{font-size:11.5px;color:var(--accent);font-weight:400;letter-spacing:.04em}
@@ -226,7 +226,7 @@ h2.st.dark em{color:var(--accent)}
 .sk{border:1px solid var(--bd);border-radius:3px;padding:20px 22px;transition:all .25s var(--ease)}
 .sk.in{opacity:1;transform:none}
 .sk:hover{border-color:var(--accent);background:var(--accent-d);transform:translateY(-3px)}
-.sk-icon{font-size:20px;margin-bottom:10px}
+.sk-icon{display:none}
 .sk-name{font-family:var(--fh);font-size:16px;font-weight:600;color:var(--white);margin-bottom:3px}
 .sk-desc{font-size:12px;color:var(--muted);line-height:1.5}
 
@@ -425,12 +425,12 @@ footer{background:var(--void2);border-top:1px solid var(--bd);padding:24px 48px;
     <div>
       <div class="card rv">
         <div class="card-head" data-de="Auf einen Blick" data-en="At a glance">Auf einen Blick</div>
-        <div class="fact-r"><span class="ficon">📍</span><span class="fk" data-de="Standort" data-en="Location">Standort</span><span class="fv">Dornbirn, Vorarlberg, AT</span></div>
-        <div class="fact-r"><span class="ficon">🎯</span><span class="fk" data-de="Zielrolle" data-en="Target role">Zielrolle</span><span class="fv" data-de="AI Lead · CAIO · IT Director" data-en="AI Lead · CAIO · IT Director">AI Lead · CAIO · IT Director</span></div>
-        <div class="fact-r"><span class="ficon">🌐</span><span class="fk" data-de="Modell" data-en="Model">Modell</span><span class="fv" data-de="Remote-first · DACH" data-en="Remote-first · DACH">Remote-first · DACH</span></div>
-        <div class="fact-r"><span class="ficon">💼</span><span class="fk" data-de="Gehalts­vst." data-en="Salary exp.">Gehaltsvst.</span><span class="fv">€100–150k</span></div>
-        <div class="fact-r"><span class="ficon">🚀</span><span class="fk">PLAI.AT</span><span class="fv" data-de="AI Lab · Praxis & Experimente" data-en="AI Lab · Practice & Experiments">AI Lab · Praxis & Experimente</span></div>
-        <div class="fact-r"><span class="ficon">💬</span><span class="fk" data-de="Sprachen" data-en="Languages">Sprachen</span><span class="fv" data-de="Deutsch (C2) · Englisch (C1)" data-en="German (C2) · English (C1)">Deutsch (C2) · Englisch (C1)</span></div>
+        <div class="fact-r"><span class="ficon">◆</span><span class="fk" data-de="Standort" data-en="Location">Standort</span><span class="fv">Dornbirn, Vorarlberg, AT</span></div>
+        <div class="fact-r"><span class="ficon">◆</span><span class="fk" data-de="Zielrolle" data-en="Target role">Zielrolle</span><span class="fv" data-de="AI Lead · CAIO · IT Director" data-en="AI Lead · CAIO · IT Director">AI Lead · CAIO · IT Director</span></div>
+        <div class="fact-r"><span class="ficon">◆</span><span class="fk" data-de="Verfügbarkeit" data-en="Availability">Verfügbarkeit</span><span class="fv" data-de="Ab sofort · Remote-first" data-en="Immediately · Remote-first">Ab sofort · Remote-first</span></div>
+        <div class="fact-r"><span class="ficon">◆</span><span class="fk" data-de="Modell" data-en="Model">Modell</span><span class="fv" data-de="Remote-first · DACH" data-en="Remote-first · DACH">Remote-first · DACH</span></div>
+        <div class="fact-r"><span class="ficon">◆</span><span class="fk">PLAI.AT</span><span class="fv" data-de="AI Lab · Praxis & Experimente" data-en="AI Lab · Practice & Experiments">AI Lab · Praxis & Experimente</span></div>
+        <div class="fact-r"><span class="ficon">◆</span><span class="fk" data-de="Sprachen" data-en="Languages">Sprachen</span><span class="fv" data-de="Deutsch (C2) · Englisch (C1)" data-en="German (C2) · English (C1)">Deutsch (C2) · Englisch (C1)</span></div>
       </div>
     </div>
   </div>
@@ -470,31 +470,31 @@ footer{background:var(--void2);border-top:1px solid var(--bd);padding:24px 48px;
     <div class="slabel rv"><span class="slabel-n">02b</span><span class="slabel-line"></span><span class="slabel-t light" data-de="Zertifikate" data-en="Certifications">Zertifikate</span></div>
     <div class="certs-grid">
       <div class="cert-card rv">
-        <div class="cert-badge-icon">☁️</div>
+        <div class="cert-badge-icon">AZ-104</div>
         <div class="cert-name">Azure Administrator Associate</div>
-        <div class="cert-issuer">Microsoft · AZ-104</div>
+        <div class="cert-issuer">Microsoft</div>
         <div class="cert-meta" data-de="Gültig bis 06/2027" data-en="Valid until 06/2027">Gültig bis 06/2027</div>
       </div>
       <div class="cert-card rv">
-        <div class="cert-badge-icon">🤖</div>
+        <div class="cert-badge-icon">AI-900</div>
         <div class="cert-name">Azure AI Fundamentals</div>
-        <div class="cert-issuer">Microsoft · AI-900</div>
+        <div class="cert-issuer">Microsoft</div>
         <div class="cert-meta" data-de="Ausgestellt 06/2025" data-en="Issued 06/2025">Ausgestellt 06/2025</div>
       </div>
       <div class="cert-card rv">
-        <div class="cert-badge-icon">📋</div>
+        <div class="cert-badge-icon">MS-102</div>
         <div class="cert-name">Microsoft 365 Administrator</div>
-        <div class="cert-issuer">Microsoft · MS-102</div>
+        <div class="cert-issuer">Microsoft</div>
         <div class="cert-meta" data-de="Ausgestellt 11/2024" data-en="Issued 11/2024">Ausgestellt 11/2024</div>
       </div>
       <div class="cert-card rv">
-        <div class="cert-badge-icon">💡</div>
+        <div class="cert-badge-icon">KI</div>
         <div class="cert-name">KI-Prompter Lehrgang</div>
         <div class="cert-issuer">Digital Campus Vorarlberg</div>
         <div class="cert-meta" data-de="Abschluss 06/2025" data-en="Completed 06/2025">Abschluss 06/2025</div>
       </div>
       <div class="cert-card rv">
-        <div class="cert-badge-icon">🏆</div>
+        <div class="cert-badge-icon">AI</div>
         <div class="cert-name">AI Fit Academy</div>
         <div class="cert-issuer">werchota.ai</div>
         <div class="cert-meta" data-de="Enterprise AI · 2025" data-en="Enterprise AI · 2025">Enterprise AI · 2025</div>
