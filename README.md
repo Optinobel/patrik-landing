@@ -1,15 +1,22 @@
 # Patrik Pernthaler — Personal Landing Page
 
-Professional personal branding page for Patrik Pernthaler,  
-IT Leader & AI Transformation Strategist, Dornbirn, Vorarlberg.
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Live](https://img.shields.io/badge/live-plai.at-brightgreen)
+
+Professional personal branding page for Patrik Pernthaler,
+IT Leader & AI Transformation Strategist, Vorarlberg, Österreich.
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ## Features
 
 - DE/EN language switcher (no reload)
-- Fully responsive — mobile-first, 3 breakpoints
+- Fully responsive — mobile-first, 3 breakpoints (1100px / 900px / 600px)
+- Hamburger navigation on mobile
 - SEO + GEO optimised (JSON-LD Person schema, Open Graph, hreflang)
 - Scroll progress bar, custom cursor, animated counters
-- Sections: Hero · About · Experience · Certifications · Skills · AI Tool Stack · AI Philosophy · Projects · Education · Contact
+- Web3Forms contact form with honeypot anti-bot protection
+- Sections: Hero · About · Experience · Certifications · Skills · AI Tool Stack · AI Philosophy · Projects · Contact
 
 ## Tech Stack
 
