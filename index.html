@@ -95,6 +95,11 @@ nav.scrolled{background:rgba(11,11,13,.90);backdrop-filter:blur(18px);-webkit-ba
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--accent);transition:width .25s var(--ease)}
 .nav-links a:hover{color:var(--white)}
 .nav-links a:hover::after{width:100%}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:transparent;border:1px solid var(--bd);border-radius:2px;cursor:pointer;padding:7px;flex-shrink:0}
+.nav-burger span{display:block;height:1px;background:var(--faint);transition:all .22s var(--ease)}
+.nav-burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 .lang-sw{display:flex;border:1px solid var(--bd);border-radius:2px;overflow:hidden}
 .lbtn{font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.1em;padding:6px 13px;border:none;background:transparent;color:var(--faint);cursor:pointer;transition:all .2s}
 .lbtn.on{background:var(--accent);color:#000}
@@ -179,7 +184,7 @@ h2.st.dark em{color:var(--accent)}
 .rxr.in{opacity:1;transform:none}
 
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:56px;align-items:start}
+.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:80px;margin-top:56px;align-items:start}
 .about-txt{font-size:17px;font-weight:300;line-height:1.85;color:#4A4860;margin-bottom:18px}
 .about-txt strong{color:var(--ink);font-weight:500}
 .about-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
@@ -217,7 +222,7 @@ h2.st.dark em{color:var(--accent)}
 .chip{font-size:11px;font-weight:400;letter-spacing:.04em;padding:3px 10px;border:1px solid var(--bd);border-radius:20px;color:var(--faint)}
 
 /* SKILLS GRID */
-.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:56px}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:56px}
 .sk{border:1px solid var(--bd);border-radius:3px;padding:20px 22px;transition:all .25s var(--ease)}
 .sk.in{opacity:1;transform:none}
 .sk:hover{border-color:var(--accent);background:var(--accent-d);transform:translateY(-3px)}
@@ -226,7 +231,7 @@ h2.st.dark em{color:var(--accent)}
 .sk-desc{font-size:12px;color:var(--muted);line-height:1.5}
 
 /* TOOL STACK */
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:32px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:32px}
 .tool{border:1px solid var(--bdl);border-radius:3px;padding:18px 20px;transition:all .22s var(--ease);background:rgba(255,255,255,.02)}
 .tool:hover{border-color:var(--accent);transform:translateY(-3px)}
 .tool-cat{font-size:9.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
@@ -291,22 +296,34 @@ footer{background:var(--void2);border-top:1px solid var(--bd);padding:24px 48px;
 }
 @media(max-width:900px){
   nav{padding:0 28px}
-  .nav-links{display:none}
-  #hero{padding:84px 28px 76px}
+  .nav-burger{display:flex}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(11,11,13,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bd);padding:16px 28px 24px;flex-direction:column;gap:0;list-style:none;z-index:199}
+  .nav-links.open{display:flex}
+  .nav-links li a{display:block;padding:13px 0;font-size:14px;border-bottom:1px solid var(--bd);color:var(--faint)}
+  .nav-links li:last-child a{border-bottom:none}
+  #hero{grid-template-columns:1fr;padding:84px 28px 76px}
+  .hero-left{order:2}
+  .hero-right{order:1;flex-direction:row;justify-content:flex-start;align-items:flex-end;gap:28px;padding-top:20px;padding-bottom:24px}
+  .photo-wrap{width:clamp(100px,25vw,160px)}
   .avail{padding:12px 28px;flex-wrap:wrap}
   .sw{padding:80px 28px}
   .about-grid,.phil-layout{grid-template-columns:1fr;gap:48px}
-  .hero-right{flex-direction:column;align-items:flex-start}
-  .photo-wrap{width:clamp(140px,40vw,200px)}
   .proj-grid{grid-template-columns:1fr}
+  .sk-grid{grid-template-columns:repeat(3,1fr)}
+  .tools-grid{grid-template-columns:repeat(3,1fr)}
+  .certs-grid{grid-template-columns:repeat(2,1fr)}
+  .edu-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
   nav{padding:0 20px}
   #hero{padding:80px 20px 68px}
   h1{font-size:clamp(52px,15vw,80px)}
-  .hero-stats{gap:24px}
+  .hero-stats{gap:20px}
   .sw{padding:64px 20px}
-  .certs-grid,.sk-grid,.tools-grid,.edu-grid{grid-template-columns:1fr}
+  .sk-grid{grid-template-columns:repeat(2,1fr)}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .certs-grid{grid-template-columns:repeat(2,1fr)}
+  .edu-grid{grid-template-columns:1fr}
   .hero-actions,.about-actions,.cta-links{flex-direction:column;align-items:flex-start}
   .cta-links{align-items:center}
   footer{padding:20px;flex-direction:column;gap:8px;text-align:center}
@@ -329,6 +346,9 @@ footer{background:var(--void2);border-top:1px solid var(--bd);padding:24px 48px;
     <li><a href="#projects" data-de="Projekte"    data-en="Projects">Projekte</a></li>
     <li><a href="#contact" data-de="Kontakt"      data-en="Contact">Kontakt</a></li>
   </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
   <div class="lang-sw">
     <button class="lbtn on" onclick="setLang('de')">DE</button>
     <button class="lbtn"    onclick="setLang('en')">EN</button>
@@ -400,7 +420,6 @@ footer{background:var(--void2);border-top:1px solid var(--bd);padding:24px 48px;
       </p>
       <div class="about-actions rv">
         <a href="#contact" class="btn btn-dark"><span data-de="Gespräch starten" data-en="Get in touch">Gespräch starten</span> →</a>
-        <a href="https://plai.at" target="_blank" rel="noopener" class="btn btn-outline-d">PLAI.AT →</a>
       </div>
     </div>
     <div>
@@ -425,7 +444,7 @@ footer{background:var(--void2);border-top:1px solid var(--bd);padding:24px 48px;
   <h2 id="exp-h" class="st rv" data-de="Breite Basis —<br><em>klarer Fokus.</em>" data-en="Broad foundation —<br><em>clear focus.</em>">Breite Basis —<br><em>klarer Fokus.</em></h2>
   <div class="tl" style="margin-top:56px">
     <div class="ti">
-      <div class="ti-year">2024 — heute</div>
+      <div class="ti-year">2025 — heute</div>
       <div class="ti-role" data-de="AI Lab · Praxis & Experimente" data-en="AI Lab · Practice & Experiments">AI Lab · Praxis & Experimente</div>
       <div class="ti-co">PLAI.AT · Dornbirn, Vorarlberg</div>
       <div class="ti-desc" data-de="KI-Workshops, Beratung und Implementierung für KMUs im DACH-Raum. McKinsey-Style Deliverables, AI Readiness Audits, Chatbot Security Testing, n8n Automatisierungen." data-en="AI workshops, consulting and implementation for DACH SMEs. McKinsey-style deliverables, AI readiness audits, chatbot security testing, n8n automation.">KI-Workshops, Beratung und Implementierung für KMUs im DACH-Raum. McKinsey-Style Deliverables, AI Readiness Audits, Chatbot Security Testing, n8n Automatisierungen.</div>
@@ -642,6 +661,20 @@ document.querySelectorAll('.cnt').forEach(c=>cntObs.observe(c));
 document.body.classList.add('js-anim');
 const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1,rootMargin:'0px 0px 0px 0px'});
 document.querySelectorAll('.rv,.rx,.rxr,.ti,.cert-card,.sk,.tool,.proj,.edu,.pillar').forEach((el,i)=>{el.style.transitionDelay=(i%7)*.07+'s';rvObs.observe(el)});
+
+// BURGER MENU
+const burger=document.getElementById('navBurger'),navLinks=document.querySelector('.nav-links');
+if(burger&&navLinks){
+  burger.addEventListener('click',()=>{
+    const open=navLinks.classList.toggle('open');
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    navLinks.classList.remove('open');
+    burger.classList.remove('open');
+  }));
+}
 
 // LANG
 let lang='de';
