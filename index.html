@@ -90,6 +90,10 @@ nav.scrolled{background:rgba(11,11,13,.90);backdrop-filter:blur(18px);-webkit-ba
 .nav-logo{font-family:var(--fh);font-size:20px;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:8px}
 .nav-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pdot 2.5s ease infinite;flex-shrink:0}
 @keyframes pdot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.5}}
+#btt{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:900;pointer-events:none}
+#btt.vis{opacity:1;transform:translateY(0);pointer-events:auto}
+#btt:hover{background:#00d4e8}
+#btt svg{width:18px;height:18px;fill:none;stroke:#0b0b0d;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{font-size:12.5px;font-weight:400;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color .2s;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--accent);transition:width .25s var(--ease)}
@@ -353,7 +357,6 @@ footer{background:var(--void2);border-top:1px solid var(--bd);padding:24px 48px;
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo"><span class="nav-dot"></span></a>
   <ul class="nav-links">
     <li><a href="#about"   data-de="Über mich"    data-en="About">Über mich</a></li>
     <li><a href="#exp"     data-de="Erfahrung"    data-en="Experience">Erfahrung</a></li>
@@ -736,6 +739,12 @@ function setLang(l){
   document.querySelectorAll('[data-de]').forEach(el=>{const v=el.dataset[l];if(v!==undefined)el.innerHTML=v;});
 }
 setLang(lang);
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('vis',window.scrollY>300)},{passive:true});
+btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
+<button id="btt" aria-label="Nach oben">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 </body>
 </html>
